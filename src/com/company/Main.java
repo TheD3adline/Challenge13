@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-    int[][] field = {{1, 2, 3},
-                     {3, 2, 1},
+    int[][] field = {{1, 2, 2},
+                     {3, 2, 2},
                      {1, 1, 1}};
 
     boolean cond;
@@ -16,16 +16,16 @@ public class Main {
 
     //method that checks the victory condition
     public static boolean winCheck(int[][] fieldCheck) {
-        if((fieldCheck[0][0] == fieldCheck[0][1] && fieldCheck[0][1] == fieldCheck[0][2]) && fieldCheck[0][0] != 0) {
-            return true;
-        } else if((fieldCheck[1][0] == fieldCheck[1][1] && fieldCheck[1][1] == fieldCheck[1][2]) && fieldCheck[1][0] != 0) {
-            return true;
-        } else if((fieldCheck[2][0] == fieldCheck[2][1] && fieldCheck[2][1] == fieldCheck[2][2]) && fieldCheck[2][0] != 0) {
+        int temp = 0;
+        for(int i = 0; i < fieldCheck.length; i++) {
+            if(fieldCheck[i][0] == fieldCheck[i][1] && fieldCheck[i][0] == fieldCheck[i][2]) {
+                temp++;
+            }
+        }
+        if(temp > 0) {
             return true;
         } else {
             return false;
         }
-
     }
-
 }
